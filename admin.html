@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelişmiş Yönetim Paneli</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 10px 0; }
+        .delete-btn { background-color: #d99a91; padding: 6px 12px; font-size: 12px; border-radius: 6px; color: white; cursor: pointer; border: none; }
+        .delete-btn:hover { background-color: #c4837a; }
+        .manage-list { list-style: none; margin-top: 15px; }
+        .manage-list li { display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg-color); margin-bottom: 8px; border-radius: 8px; border: 1px solid var(--border-color); font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sistem Yönetim Merkezi</h1>
+        <nav style="display: flex; align-items: center; gap: 20px;">
+            <a href="index.html" style="font-weight: 600; color: var(--accent-color);">Siteden Çıkış Yap</a>
+            <!-- 🌓 PANEL İÇİN TEMA DEĞİŞTİRME BUTONU -->
+            <button id="themeToggle" class="theme-toggle-btn">🌙 Mod</button>
+        </nav>
+    </header>
+
+    <!-- 🔐 ŞİFRE KONTROLÜ VE VERİ/TEMA YÜKLEME MOTORU -->
+    <script>
+        // 1. Sayfa yüklenirken hafızadaki temayı anında uygula (Ekran göz kırpmasın diye en başta)
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        window.onload = function() {
+            // 2. Buton yazısını ayarla
+            const themeToggle = document.getElementById('themeToggle');
+            if (localStorage.getItem('theme') === 'dark') {
+                themeToggle.innerText = "☀️ Mod";
+            }
+
+            // 3. Şifre kontrolünü yap
+            const GIZLI_SIFRE = "elcin123"; 
+            let girilenSifre = prompt("Lütfen Admin Şifresini Giriniz:");
+            if (girilenSifre !== GIZLI_SIFRE) {
+                alert("Hatalı şifre! Ana sayfaya yönlendiriliyorsunuz.");
+                window.location.href = "index.html";
+                return; 
+            }
+
+            // 4. Şifre doğruysa içerikleri ve dinamik listeleri doldur
+            document.getElementById('aboutText').value = localStorage.getItem('myAbout') || "";
+            renderAll();
+
+            // 5. Tema değiştirme butonu tetikleyicisi
+            themeToggle.addEventListener('click', () => {
+                let currentTheme = document.documentElement.getAttribute('data-theme');
+                if (currentTheme === 'dark') {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                    themeToggle.innerText = "🌙 Mod";
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    themeToggle.innerText = "☀️ Mod";
+                }
+            });
+        };
+    </script>
+
+    <main>
+        <div class="admin-grid">
+            
+            <!-- HAKKIMDA -->
+            <section>
+                <h2>Hakkımda Yazısı</h2>
+                <form id="aboutForm">
+                    <textarea id="aboutText" rows="5" required></textarea>
+                    <button type="submit">Güncelle</button>
+                </form>
+            </section>
+
+            <!-- YETENEKLER -->
+            <section>
+                <h2>Yetenek Ekle</h2>
+                <form id="skillForm">
+                    <input type="text" id="skillName" required placeholder="Yetenek Adı (Örn: C)">
+                    <select id="skillLevel" style="margin-top:10px;">
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="1">⭐</option>
+                    </select>
+                    <button type="submit">Ekle</button>
+                </form>
+                <ul id="adminSkillsList" class="manage-list"></ul>
+            </section>
+
+            <!-- PROJELER -->
+            <section>
+                <h2>Proje Ekle (Pop-up Destekli)</h2>
+                <form id="projectForm">
+                    <input type="text" id="projectName" required placeholder="Proje Adı">
+                    <input type="text" id="projectTech" placeholder="Kullanılan Diller (Örn: Python, React)">
+                    <input type="text" id="projectLink" placeholder="GitHub URL'si">
+                    <textarea id="projectDesc" rows="4" required placeholder="Geniş Proje Açıklaması" style="margin-top:10px;"></textarea>
+                    <button type="submit">Ekle</button>
+                </form>
+                <ul id="adminProjectsList" class="manage-list"></ul>
+            </section>
+
+            <!-- SERTİFİKALAR -->
+            <section>
+                <h2>Sertifika Ekle</h2>
+                <form id="certForm">
+                    <input type="text" id="certTitle" required placeholder="Sertifika / Kurs Adı">
+                    <input type="text" id="certInstitution" required placeholder="Veren Kurum (Örn: BTK Akademi)">
+                    <input type="text" id="certLink" placeholder="Sertifika Doğrulama Linki (URL)">
+                    <button type="submit">Ekle</button>
+                </form>
+                <ul id="adminCertsList" class="manage-list"></ul>
+            </section>
+
+            <!-- BLOG -->
+            <section>
+                <h2>Blog Yazısı Yayınla</h2>
+                <form id="blogForm">
+                    <input type="text" id="blogTitle" required placeholder="Yazı Başlığı">
+                    <textarea id="blogContent" rows="4" required placeholder="Blog İçeriği" style="margin-top:10px;"></textarea>
+                    <button type="submit">Yayınla</button>
+                </form>
+                <ul id="adminBlogsList" class="manage-list"></ul>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        // --- FORM GÖNDERİMLERİ ---
+        document.getElementById('aboutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            localStorage.setItem('myAbout', document.getElementById('aboutText').value);
+            alert('Hakkımda güncellendi!');
+        });
+
+        document.getElementById('skillForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let items = JSON.parse(localStorage.getItem('mySkills')) || [];
+            items.push({ name: document.getElementById('skillName').value, level: parseInt(document.getElementById('skillLevel').value) });
+            localStorage.setItem('mySkills', JSON.stringify(items));
+            document.getElementById('skillForm').reset();
+            renderAll();
+        });
+
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let items = JSON.parse(localStorage.getItem('myProjects')) || [];
+            items.push({ 
+                title: document.getElementById('projectName').value, 
+                tech: document.getElementById('projectTech').value, 
+                link: document.getElementById('projectLink').value, 
+                desc: document.getElementById('projectDesc').value 
+            });
+            localStorage.setItem('myProjects', JSON.stringify(items));
+            document.getElementById('projectForm').reset();
+            renderAll();
+        });
+
+        document.getElementById('certForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let items = JSON.parse(localStorage.getItem('myCerts')) || [];
+            items.push({ 
+                title: document.getElementById('certTitle').value, 
+                institution: document.getElementById('certInstitution').value, 
+                link: document.getElementById('certLink').value 
+            });
+            localStorage.setItem('myCerts', JSON.stringify(items));
+            document.getElementById('certForm').reset();
+            renderAll();
+        });
+
+        document.getElementById('blogForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const content = document.getElementById('blogContent').value;
+            const wordsCount = content.split(/\s+/).length;
+            const readTime = Math.max(1, Math.ceil(wordsCount / 200));
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const today = new Date().toLocaleDateString('tr-TR', options);
+
+            let items = JSON.parse(localStorage.getItem('myBlogs')) || [];
+            items.unshift({ title: document.getElementById('blogTitle').value, content: content, date: today, readTime: readTime });
+            localStorage.setItem('myBlogs', JSON.stringify(items));
+            document.getElementById('blogForm').reset();
+            renderAll();
+        });
+
+        // --- LİSTELEME SİSTEMİ ---
+        function renderAll() {
+            const listeleriDoldur = (key, elementId) => {
+                const items = JSON.parse(localStorage.getItem(key)) || [];
+                const el = document.getElementById(elementId);
+                el.innerHTML = items.length === 0 ? '<li style="color:#a3aba5;">Henüz veri eklenmedi.</li>' : '';
+                items.forEach((item, i) => {
+                    el.innerHTML += `<li><span><strong>${item.title || item.name}</strong></span><button class="delete-btn" onclick="deleteItem('${key}', ${i})">Sil</button></li>`;
+                });
+            };
+            listeleriDoldur('mySkills', 'adminSkillsList');
+            listeleriDoldur('myProjects', 'adminProjectsList');
+            listeleriDoldur('myCerts', 'adminCertsList');
+            listeleriDoldur('myBlogs', 'adminBlogsList');
+        }
+
+        window.deleteItem = function(key, index) {
+            let items = JSON.parse(localStorage.getItem(key));
+            items.splice(index, 1);
+            localStorage.setItem(key, JSON.stringify(items));
+            renderAll();
+        };
+    </script>
+</body>
+</html>
