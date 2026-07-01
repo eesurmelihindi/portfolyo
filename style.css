@@ -309,3 +309,9 @@
        }
    }
    footer { text-align: center; padding: 40px; color: #a3aba5; font-size: 13px; }
+   .social-icon-btn i {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
