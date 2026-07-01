@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- 🌐 STICKY FLOATING SOCIAL BAR -->
     <div class="sticky-social-bar">
         <a href="https://github.com/eesurmelihindi" target="_blank" class="social-icon-btn" title="GitHub">GH</a>
         <a href="https://linkedin.com" target="_blank" class="social-icon-btn" title="LinkedIn">LN</a>
@@ -32,55 +33,63 @@
     </header>
 
     <main>
+        <!-- ABOUT ME -->
         <section id="about">
             <h2>About Me</h2>
             <p>
-                I am a student with a strong interest in technology and software development, committed to continuous learning and self-improvement. I develop simple AI-assisted projects using Python to gain practical experience and strengthen my programming skills. I am eager to learn new technologies, adaptable to new challenges, and solution-oriented in my approach. My goal is to further develop my skills and apply them in real-world projects and professional environments.
+                Hello! I am Elçin Sürmelihindi. I am a highly motivated student focused on software development, financial analysis, and technical translation. I enjoy building bridges between complex analytical structures and functional software solutions. Currently, I am expanding my skills in programming and open-source project development while working on academic translations.
             </p>
         </section>
 
+        <!-- SKILLS -->
         <section id="skills">
             <h2>Skills</h2>
             <div class="skills-container">
-                <div class="skill-card"><span>C Programming</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐</span></div>
-                <div class="skill-card"><span>Python</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐</span></div>
-                <div class="skill-card"><span>SQL & Databases</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐</span></div>
+                <div class="skill-card"><span>C Programming</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐⭐</span></div>
+                <div class="skill-card"><span>Python</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐⭐</span></div>
+                <div class="skill-card"><span>SQL & Databases</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐⭐</span></div>
+                <div class="skill-card"><span>React.js</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐</span></div>
                 <div class="skill-card"><span>Technical Translation</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐⭐⭐</span></div>
-                </div>
+            </div>
         </section>
 
+        <!-- PROJECTS (REAL & STATIC) -->
         <section id="portfolio">
             <h2>Featured Projects</h2>
             <div class="portfolio-grid">
                 
+                <!-- PROJECT 1: CAFE MANAGEMENT -->
                 <div class="project-card">
                     <div>
                         <h3>Cafe Management Application</h3>
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">React</span>
-                            <span class="tag">SQLite</span>
                         </div>
-                        <p>A comprehensive desktop/web application developed to manage cafe operations, orders, and sales history smoothly.</p>
+                        <p>A comprehensive application developed to manage cafe operations, orders, and sales history smoothly.</p>
                     </div>
-                    <button class="view-btn" onclick="openProjectDetails('Cafe Management Application', 'This project is a full-stack cafe management system. It tracks live table orders, processes billing, and generates daily analytical sales reports. Developed using React for a modern user interface and Python for secure local data storage.', 'Python, React, SQLite', 'https://github.com')">View Details</button>
+                    <button class="view-btn" onclick="openProjectDetails('Cafe Management Application', 'This project is a full-stack cafe management system (kafe_proje). It tracks live table orders, processes billing, and generates daily sales reports using React for the interface and Python for the logic.', 'Python, React', 'https://github.com/eesurmelihindi')">View Details</button>
                 </div>
 
+                <!-- PROJECT 2: CURRENCY CONVERTER -->
                 <div class="project-card">
                     <div>
-                        <h3>Currency Converter & Exchange Script</h3>
+                        <h3>Currency Converter Script</h3>
                         <div class="project-tags">
                             <span class="tag">C Language</span>
                             <span class="tag">Algorithms</span>
                         </div>
                         <p>A fast, terminal-based currency converter program designed with structured data types and accurate conversion math.</p>
                     </div>
-                    <button class="view-btn" onclick="openProjectDetails('Currency Converter Script', 'A pure C application created to handle currency exchange conversions. It uses structured data matrices to simulate floating daily exchange rates and processes user requests with high statistical accuracy.', 'C Language, Algorithms', 'https://github.com')">View Details</button>
+                    <button class="view-btn" onclick="openProjectDetails('Currency Converter Script', 'A pure C application created to handle currency exchange conversions efficiently. It processes user requests with high statistical accuracy using clear algorithmic logic.', 'C Language, Algorithms', 'https://github.com/eesurmelihindi')">View Details</button>
                 </div>
 
-                </div>
+                <!-- 💡 NEW PROJECTS CAN BE ADDED RIGHT HERE BY COPY-PASTING A CARD -->
+
+            </div>
         </section>
 
+        <!-- ACADEMIC SERVICES & STUDY NOTES -->
         <section id="academic-services">
             <h2>Academic Services & Study Guides</h2>
             <p style="margin-bottom: 25px; color: var(--text-color); font-size: 15px;">
@@ -88,27 +97,30 @@
             </p>
             <div class="services-grid">
                 
+                <!-- SERVICE 1 -->
                 <div class="service-card">
                     <div>
                         <span class="tag" style="background:var(--card-bg); margin-bottom:10px; display:inline-block;">✍️ Translation Service</span>
                         <h3>Academic & Technical Translation</h3>
-                        <p style="font-size:14px; margin-top:5px;">Professional English-to-Turkish and Turkish-to-English translation localized specifically for computer science and economics terminology.</p>
+                        <p style="font-size:14px; margin-top:5px;">Professional English-to-Turkish and Turkish-to-English translation services localized specifically for computer science, statistics, and economics terminology.</p>
                     </div>
                     <button class="view-btn" onclick="requestService('Academic & Technical Translation', 'translation')">Inquire About This Service →</button>
                 </div>
 
+                <!-- SERVICE 2 -->
                 <div class="service-card">
                     <div>
                         <span class="tag" style="background:var(--card-bg); margin-bottom:10px; display:inline-block;">📚 Study Notes</span>
-                        <h3>Statistics & Finance Study Pack</h3>
-                        <p style="font-size:14px; margin-top:5px;">Comprehensive 50-question practice sets, formulas sheet, and theoretical summaries for core university curriculum.</p>
+                        <h3>Finance & Accounting Study Pack</h3>
+                        <p style="font-size:14px; margin-top:5px;">Comprehensive university course summaries, 50-question practice sets, and detailed formula sheets for Finance, Statistics, and Accounting.</p>
                     </div>
-                    <button class="view-btn" onclick="requestService('Statistics & Finance Study Pack', 'notes')">Request This Study Note →</button>
+                    <button class="view-btn" onclick="requestService('Finance & Accounting Study Pack', 'notes')">Request This Study Note →</button>
                 </div>
 
             </div>
         </section>
 
+        <!-- CERTIFICATES -->
         <section id="certificates">
             <h2>Certificates & Credentials</h2>
             <div class="certificates-grid">
@@ -122,6 +134,7 @@
             </div>
         </section>
 
+        <!-- FAQ SECTION -->
         <section id="faq">
             <h2>Frequently Asked Questions</h2>
             <div class="faq-container">
@@ -140,28 +153,34 @@
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Yes! All study guides and comprehensive practice sets are thoroughly prepared and cross-referenced directly from my official courses such as Finance, Statistics, and Accounting.
+                        Yes! All study guides and comprehensive 50-question practice sets are thoroughly prepared and cross-referenced directly from official curriculum courses like Finance, Statistics, and History.
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- BLOG SECTION -->
         <section id="blog">
             <h2>Latest Articles</h2>
             <div id="blogContainer">
                 
+                <!-- BLOG POST 1 -->
                 <article>
                     <div class="blog-meta">📅 July 1, 2026 | ⏱️ 3 min read</div>
                     <h3>Exploring Code Structures in C Language</h3>
                     <p>Understanding memory layout, pointers, and structures in C. In this short article, I discuss how structural coding principles help optimize micro-applications and backend performance...</p>
                 </article>
 
-                </div> 
+                <!-- 💡 NEW BLOG ARTICLES CAN BE ADDED HERE AS AN <article> TO SHOW LIVE TO EVERYONE -->
+
+            </div> 
         </section>
 
+        <!-- CONTACT FORM -->
         <section id="contact">
             <h2>Get in Touch</h2>
-            <form action="BURAYA_FORMSPREE_LINKINI_YAPISTIR" method="POST" style="max-width: 600px;">
+            <!-- ⚠️ REMEMBER TO PASTE YOUR REAL FORMSPREE LINK IN THE ACTION BELOW -->
+            <form action="https://formspree.io/f/mvzjwzay" method="POST" style="max-width: 600px;">
                 <div style="margin-bottom: 12px;">
                     <label>Full Name:</label>
                     <input type="text" name="name" required placeholder="e.g. John Doe">
@@ -179,6 +198,7 @@
         </section>
     </main>
 
+    <!-- POP-UP MODAL CONTAINER -->
     <div id="projectModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" id="closeModal">&times;</span>
@@ -194,7 +214,7 @@
     </footer>
 
     <script>
-        // Tema Motoru
+        // Theme Engine
         const themeToggle = document.getElementById('themeToggle');
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
@@ -213,10 +233,10 @@
             }
         });
 
-        // FAQ Menü Tetikleyici
+        // FAQ Toggle Engine
         window.toggleFaq = function(element) { element.parentElement.classList.toggle('active'); };
 
-        // İletişim Formu Otomatik Doldurucu
+        // Contact Form Autofiller & Scroll
         window.requestService = function(title, type) {
             const messageInput = document.getElementById('contactMessage');
             if (type === 'translation') {
@@ -227,7 +247,7 @@
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         };
 
-        // Dinamik Pop-up Açıcı
+        // Modal View Details Trigger
         window.openProjectDetails = function(title, desc, tech, link) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalDesc').innerText = desc;
