@@ -9,7 +9,7 @@
 <body>
 
     <div class="sticky-social-bar">
-        <a href="https://github.com" target="_blank" class="social-icon-btn" title="GitHub">GH</a>
+        <a href="https://github.com/eesurmelihindi" target="_blank" class="social-icon-btn" title="GitHub">GH</a>
         <a href="https://linkedin.com" target="_blank" class="social-icon-btn" title="LinkedIn">LN</a>
         <a href="#contact" class="social-icon-btn" title="Email" style="font-size: 12px;">✉</a>
     </div>
@@ -34,17 +34,51 @@
     <main>
         <section id="about">
             <h2>About Me</h2>
-            <p id="aboutContent">Loading...</p>
+            <p>
+                I am a student with a strong interest in technology and software development, committed to continuous learning and self-improvement. I develop simple AI-assisted projects using Python to gain practical experience and strengthen my programming skills. I am eager to learn new technologies, adaptable to new challenges, and solution-oriented in my approach. My goal is to further develop my skills and apply them in real-world projects and professional environments.
+            </p>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
-            <div class="skills-container"></div>
+            <div class="skills-container">
+                <div class="skill-card"><span>C Programming</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐</span></div>
+                <div class="skill-card"><span>Python</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐</span></div>
+                <div class="skill-card"><span>SQL & Databases</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐</span></div>
+                <div class="skill-card"><span>Technical Translation</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐⭐⭐</span></div>
+                </div>
         </section>
 
         <section id="portfolio">
             <h2>Featured Projects</h2>
-            <div class="portfolio-grid"></div>
+            <div class="portfolio-grid">
+                
+                <div class="project-card">
+                    <div>
+                        <h3>Cafe Management Application</h3>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">React</span>
+                            <span class="tag">SQLite</span>
+                        </div>
+                        <p>A comprehensive desktop/web application developed to manage cafe operations, orders, and sales history smoothly.</p>
+                    </div>
+                    <button class="view-btn" onclick="openProjectDetails('Cafe Management Application', 'This project is a full-stack cafe management system. It tracks live table orders, processes billing, and generates daily analytical sales reports. Developed using React for a modern user interface and Python for secure local data storage.', 'Python, React, SQLite', 'https://github.com')">View Details</button>
+                </div>
+
+                <div class="project-card">
+                    <div>
+                        <h3>Currency Converter & Exchange Script</h3>
+                        <div class="project-tags">
+                            <span class="tag">C Language</span>
+                            <span class="tag">Algorithms</span>
+                        </div>
+                        <p>A fast, terminal-based currency converter program designed with structured data types and accurate conversion math.</p>
+                    </div>
+                    <button class="view-btn" onclick="openProjectDetails('Currency Converter Script', 'A pure C application created to handle currency exchange conversions. It uses structured data matrices to simulate floating daily exchange rates and processes user requests with high statistical accuracy.', 'C Language, Algorithms', 'https://github.com')">View Details</button>
+                </div>
+
+                </div>
         </section>
 
         <section id="academic-services">
@@ -52,12 +86,40 @@
             <p style="margin-bottom: 25px; color: var(--text-color); font-size: 15px;">
                 Below are the academic translation services I offer and the course summaries I have prepared. Click the button on any item to instantly request it or inquire about collaboration.
             </p>
-            <div class="services-grid"></div>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <div>
+                        <span class="tag" style="background:var(--card-bg); margin-bottom:10px; display:inline-block;">✍️ Translation Service</span>
+                        <h3>Academic & Technical Translation</h3>
+                        <p style="font-size:14px; margin-top:5px;">Professional English-to-Turkish and Turkish-to-English translation localized specifically for computer science and economics terminology.</p>
+                    </div>
+                    <button class="view-btn" onclick="requestService('Academic & Technical Translation', 'translation')">Inquire About This Service →</button>
+                </div>
+
+                <div class="service-card">
+                    <div>
+                        <span class="tag" style="background:var(--card-bg); margin-bottom:10px; display:inline-block;">📚 Study Notes</span>
+                        <h3>Statistics & Finance Study Pack</h3>
+                        <p style="font-size:14px; margin-top:5px;">Comprehensive 50-question practice sets, formulas sheet, and theoretical summaries for core university curriculum.</p>
+                    </div>
+                    <button class="view-btn" onclick="requestService('Statistics & Finance Study Pack', 'notes')">Request This Study Note →</button>
+                </div>
+
+            </div>
         </section>
 
         <section id="certificates">
             <h2>Certificates & Credentials</h2>
-            <div class="certificates-grid"></div>
+            <div class="certificates-grid">
+                <div class="cert-card">
+                    <div>
+                        <h3>Advanced C Programming Core</h3>
+                        <div class="cert-info">🏛️ BTK Akademi</div>
+                    </div>
+                    <a href="https://github.com" target="_blank" class="action-link" style="font-size:12px; padding:6px 12px; margin-top:10px;">Verify Certificate →</a>
+                </div>
+            </div>
         </section>
 
         <section id="faq">
@@ -78,16 +140,7 @@
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
-                        Yes! All study guides and 50-question comprehensive practice sets are thoroughly prepared and cross-referenced directly from my official courses such as Finance, Statistics, and Accounting.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>How can I request access to a specific study note?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Simply click the "Request This Study Note" button above. The contact form at the bottom will automatically prepare a template message, and I will share the cloud access link with you via email.
+                        Yes! All study guides and comprehensive practice sets are thoroughly prepared and cross-referenced directly from my official courses such as Finance, Statistics, and Accounting.
                     </div>
                 </div>
             </div>
@@ -95,7 +148,15 @@
 
         <section id="blog">
             <h2>Latest Articles</h2>
-            <div id="blogContainer"></div> 
+            <div id="blogContainer">
+                
+                <article>
+                    <div class="blog-meta">📅 July 1, 2026 | ⏱️ 3 min read</div>
+                    <h3>Exploring Code Structures in C Language</h3>
+                    <p>Understanding memory layout, pointers, and structures in C. In this short article, I discuss how structural coding principles help optimize micro-applications and backend performance...</p>
+                </article>
+
+                </div> 
         </section>
 
         <section id="contact">
@@ -123,17 +184,17 @@
             <span class="close-modal" id="closeModal">&times;</span>
             <h2 id="modalTitle" style="border:none; margin-bottom:10px;">Project Title</h2>
             <div id="modalTags" class="project-tags" style="margin-bottom:15px;"></div>
-            <p id="modalDesc" style="margin-bottom:20px; white-space: pre-wrap;">Project details description...</p>
+            <p id="modalDesc" style="margin-bottom:20px; white-space: pre-wrap;">Description...</p>
             <div id="modalLinkContainer"></div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Elçin Sürmelihindi. All Rights Reserved<a href="admin.html" style="color: inherit; cursor: default; text-decoration: none;">.</a></p>
+        <p>&copy; 2026 Elçin Sürmelihindi. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // ==================== 🌓 THEME TOGGLE SCRIPT ====================
+        // Tema Motoru
         const themeToggle = document.getElementById('themeToggle');
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
@@ -152,94 +213,26 @@
             }
         });
 
-        // ==================== ❓ FAQ ACCORDION ENGINE ====================
-        window.toggleFaq = function(element) {
-            const item = element.parentElement;
-            item.classList.toggle('active');
-        };
+        // FAQ Menü Tetikleyici
+        window.toggleFaq = function(element) { element.parentElement.classList.toggle('active'); };
 
-        // ==================== 📦 DATA LOADING MOTOR ====================
-        window.onload = function() {
-            document.getElementById('aboutContent').innerText = localStorage.getItem('myAbout') || "Welcome to my portfolio.";
-
-            const skillsContainer = document.querySelector('.skills-container');
-            const savedSkills = JSON.parse(localStorage.getItem('mySkills')) || [];
-            skillsContainer.innerHTML = savedSkills.length === 0 ? '<p>No skills added yet.</p>' : '';
-            savedSkills.forEach(skill => {
-                skillsContainer.innerHTML += `<div class="skill-card"><span>${skill.name}</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">${'⭐'.repeat(skill.level)}</span></div>`;
-            });
-
-            const portfolioGrid = document.querySelector('.portfolio-grid');
-            const savedProjects = JSON.parse(localStorage.getItem('myProjects')) || [];
-            portfolioGrid.innerHTML = savedProjects.length === 0 ? '<p>No projects added yet.</p>' : '';
-            savedProjects.forEach((proj, index) => {
-                const tagsHTML = proj.tech ? proj.tech.split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('') : '';
-                portfolioGrid.innerHTML += `
-                    <div class="project-card">
-                        <div>
-                            <h3>${proj.title}</h3>
-                            <div class="project-tags">${tagsHTML}</div>
-                            <p>${proj.desc.substring(0, 100)}${proj.desc.length > 100 ? '...' : ''}</p>
-                        </div>
-                        <button class="view-btn" onclick="openProjectDetails(${index})">View Details</button>
-                    </div>`;
-            });
-
-            const servicesGrid = document.querySelector('.services-grid');
-            const savedServices = JSON.parse(localStorage.getItem('myServices')) || [];
-            servicesGrid.innerHTML = savedServices.length === 0 ? '<p>No services or study guides added yet.</p>' : '';
-            savedServices.forEach((srv, index) => {
-                const typeTag = srv.type === 'translation' ? '✍️ Translation Service' : '📚 Study Notes';
-                const btnText = srv.type === 'translation' ? 'Inquire About This Service →' : 'Request This Study Note →';
-                
-                servicesGrid.innerHTML += `
-                    <div class="service-card">
-                        <div>
-                            <span class="tag" style="background:var(--card-bg); margin-bottom:10px; display:inline-block;">${typeTag}</span>
-                            <h3>${srv.title}</h3>
-                            <p style="font-size:14px; margin-top:5px;">${srv.desc}</p>
-                        </div>
-                        <button class="view-btn" onclick="requestService('${srv.title}', '${srv.type}')">${btnText}</button>
-                    </div>`;
-            });
-
-            const certificatesGrid = document.querySelector('.certificates-grid');
-            const savedCerts = JSON.parse(localStorage.getItem('myCerts')) || [];
-            certificatesGrid.innerHTML = savedCerts.length === 0 ? '<p>No certificates added yet.</p>' : '';
-            savedCerts.forEach(cert => {
-                const linkHTML = cert.link ? `<a href="${cert.link}" target="_blank" class="action-link" style="font-size:12px; padding:6px 12px; margin-top:10px;">Verify Certificate →</a>` : '';
-                certificatesGrid.innerHTML += `<div class="cert-card"><div><h3>${cert.title}</h3><div class="cert-info">🏛️ ${cert.institution}</div></div>${linkHTML}</div>`;
-            });
-
-            const blogContainer = document.getElementById('blogContainer');
-            const savedBlogs = JSON.parse(localStorage.getItem('myBlogs')) || [];
-            blogContainer.innerHTML = savedBlogs.length === 0 ? '<p>No articles published yet.</p>' : '';
-            savedBlogs.forEach(blog => {
-                blogContainer.innerHTML += `<article><div class="blog-meta">📅 ${blog.date} | ⏱️ ${blog.readTime} min read</div><h3>${blog.title}</h3><p>${blog.content}</p></article>`;
-            });
-        };
-
-        // ==================== 🎯 AUTOMATIC FORM FILL & SCROLL ====================
+        // İletişim Formu Otomatik Doldurucu
         window.requestService = function(title, type) {
             const messageInput = document.getElementById('contactMessage');
-            
             if (type === 'translation') {
                 messageInput.value = `Hi Elçin,\n\nI am reaching out regarding your professional translation service: "${title}". I would like to get more information about availability and collaboration details.`;
             } else {
                 messageInput.value = `Hi Elçin,\n\nI am interested in your university study notes for "${title}". Could you please share the access details or the study set file with me?`;
             }
-            
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         };
 
-        window.openProjectDetails = function(index) {
-            const savedProjects = JSON.parse(localStorage.getItem('myProjects')) || [];
-            const proj = savedProjects[index];
-            if(!proj) return;
-            document.getElementById('modalTitle').innerText = proj.title;
-            document.getElementById('modalDesc').innerText = proj.desc;
-            document.getElementById('modalTags').innerHTML = proj.tech ? proj.tech.split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('') : '';
-            document.getElementById('modalLinkContainer').innerHTML = proj.link ? `<a href="${proj.link}" target="_blank" class="action-link">View Source on GitHub →</a>` : '';
+        // Dinamik Pop-up Açıcı
+        window.openProjectDetails = function(title, desc, tech, link) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalTags').innerHTML = tech ? tech.split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('') : '';
+            document.getElementById('modalLinkContainer').innerHTML = link ? `<a href="${link}" target="_blank" class="action-link">View Source on GitHub →</a>` : '';
             document.getElementById('projectModal').style.display = 'flex';
         };
 
