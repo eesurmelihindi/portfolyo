@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <button id="menuToggle" class="menu-toggle-btn" aria-label="Open Menu">☰</button>
     <title>Elçin Sürmelihindi | Professional Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -26,9 +27,9 @@
         <a href="https://github.com/eesurmelihindi" target="_blank" class="social-icon-btn" title="GitHub">
             <i class="fab fa-github"></i>
         </a>
-        <a href="https://linkedin.com" target="_blank" class="social-icon-btn" title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
+     <a href="https://www.linkedin.com/in/eesurmelihindi/" target="_blank" class="social-icon-btn" title="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+</a>
         <a href="#contact" class="social-icon-btn" title="Email">
             <i class="fas fa-envelope"></i>
         </a>
@@ -213,7 +214,7 @@
                 <!-- BLOG POST 1 -->
                 <article>
                    
-                    <h3>Ther is no article yet</h3>
+                    <h3>There is no article yet</h3>
                 </article>
 
                 <!-- 💡 NEW BLOG ARTICLES CAN BE ADDED HERE AS AN <article> TO SHOW LIVE TO EVERYONE -->
@@ -260,23 +261,36 @@
 
     <script>
         // ==================== 📱 MOBİL SİDEBAR MOTORU ====================
+        // ==================== 📱 MOBİL SİDEBAR MOTORU (GÜÇLENDİRİLDİ) ====================
         const navMenu = document.getElementById('navMenu');
         const menuToggle = document.getElementById('menuToggle');
         const closeSidebar = document.getElementById('closeSidebar');
 
-        // Menüyü Aç
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.add('sidebar-active');
-        });
+        // Menüyü Aç (Hem tıklama hem de mobilde dokunma algılayıcı eklendi)
+        if (menuToggle) {
+            const openMenu = (e) => {
+                e.preventDefault();
+                navMenu.classList.add('sidebar-active');
+            };
+            menuToggle.addEventListener('click', openMenu);
+            menuToggle.addEventListener('touchstart', openMenu, { passive: false });
+        }
 
         // Menüyü Kapat
-        closeSidebar.addEventListener('click', () => {
-            navMenu.classList.remove('sidebar-active');
-        });
+        if (closeSidebar) {
+            const hideMenu = (e) => {
+                e.preventDefault();
+                navMenu.classList.remove('sidebar-active');
+            };
+            closeSidebar.addEventListener('click', hideMenu);
+            closeSidebar.addEventListener('touchstart', hideMenu, { passive: false });
+        }
 
         // Menü linklerine tıklanınca sidebar otomatik kapansın
         window.closeMobileMenu = function() {
-            navMenu.classList.remove('sidebar-active');
+            if (navMenu) {
+                navMenu.classList.remove('sidebar-active');
+            }
         };
         // Theme Engine
      // ==================== 🌗 THEME ENGINE (NEW KRATER TOGGLE) ====================

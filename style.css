@@ -694,3 +694,35 @@
       list-style: none !important;
     }
   }
+  /* ==================== 📱 HAMBURGER MENÜ BUTONU ZORLA GÖSTERME ==================== */
+@media (max-width: 768px) {
+    header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      min-height: 60px !important;
+      padding: 10px 20px !important;
+      position: relative !important;
+    }
+  
+    .menu-toggle-btn {
+      display: block !important;          /* Mobilde zorla görünür yap */
+      visibility: visible !important;    /* Gizliliği kaldır */
+      opacity: 1 !important;             /* Şeffaflığı sıfırla */
+      font-size: 28px !important;        /* Butonu belirginleştir */
+      color: #5b6bff !important;         /* Senin o tatlı imza mavi/mor renginle parlasın */
+      background: none !important;
+      border: none !important;
+      cursor: pointer !important;
+      position: absolute !important;     /* Sol köşeye sabitleyelim */
+      left: 20px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      z-index: 9999 !important;          /* En üst katmana al */
+    }
+  
+    header h1 {
+      margin-left: 50px !important;      /* Başlık butonun üstüne binmesin diye kaydır */
+      font-size: 20px !important;
+    }
+  }
