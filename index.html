@@ -21,19 +21,22 @@
             <i class="fas fa-envelope"></i>
         </a>
     </div>
-
     <header>
+        <button id="menuToggle" class="menu-toggle-btn" aria-label="Open Menu">☰</button>
+
         <h1>Elçin Sürmelihindi</h1>
-        <nav>
+
+        <nav id="navMenu">
+            <button id="closeSidebar" class="close-sidebar-btn">&times;</button>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#academic-services">Services & Notes</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" onclick="closeMobileMenu()">About Me</a></li>
+                <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
+                <li><a href="#portfolio" onclick="closeMobileMenu()">Projects</a></li>
+                <li><a href="#academic-services" onclick="closeMobileMenu()">Services & Notes</a></li>
+                <li><a href="#certificates" onclick="closeMobileMenu()">Certificates</a></li>
+                <li><a href="#faq" onclick="closeMobileMenu()">FAQ</a></li>
+                <li><a href="#blog" onclick="closeMobileMenu()">Blog</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
                 <li><button id="themeToggle" class="theme-toggle-btn">🌙 Mode</button></li>
             </ul>
         </nav>
@@ -44,21 +47,29 @@
         <section id="about">
             <h2>About Me</h2>
             <p>
-                Hello! I am Elçin Sürmelihindi. I am a highly motivated student focused on software development, financial analysis, and technical translation. I enjoy building bridges between complex analytical structures and functional software solutions. Currently, I am expanding my skills in programming and open-source project development while working on academic translations.
+                I am a student with a strong interest in technology and software development, committed to continuous learning and self-improvement. I develop simple AI-assisted projects using Python to gain practical experience and strengthen my programming skills. I am eager to learn new technologies, adaptable to new challenges, and solution-oriented in my approach. My goal is to further develop my skills and apply them in real-world projects and professional environments.
             </p>
         </section>
 
+      
         <!-- SKILLS -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-card"><span>C Programming</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐⭐</span></div>
-                <div class="skill-card"><span>Python</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐⭐</span></div>
-                <div class="skill-card"><span>SQL & Databases</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐⭐</span></div>
-                <div class="skill-card"><span>React.js</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐</span></div>
-                <div class="skill-card"><span>Technical Translation</span><span style="display:block; font-size: 11px; margin-top: 4px; letter-spacing: 2px;">⭐⭐⭐⭐⭐</span></div>
-            </div>
-        </section>
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <span>C Programming</span>
+                    </div>
+                    <div class="skill-card">
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-card">
+                        <span>SQL & Databases</span>
+                    </div>
+                    <div class="skill-card">
+                        <span>Technical Translation</span>
+                    </div>
+                </div>
+            </section>
 
         <!-- PROJECTS (REAL & STATIC) -->
         <section id="portfolio">
@@ -92,88 +103,80 @@
                 </div>
 
                 <!-- 💡 NEW PROJECTS CAN BE ADDED RIGHT HERE BY COPY-PASTING A CARD -->
-<div class="project-card">
-    <div>
-        <h3>Yeni Proje Adı</h3>
-        <div class="project-tags">
-            <span class="tag">Python</span>
-        </div>
-        <p>Kısa açıklama metni.</p>
-    </div>
-    <button class="view-btn" onclick="openProjectDetails('Yeni Proje Adı', 'Uzun detay açıklaması.', 'Python', 'GitHub Linkin')">View Details</button>
-</div>
-            </div>
-        </section>
-
-        <!-- ACADEMIC SERVICES & STUDY NOTES -->
-        <section id="academic-services">
-            <h2>Academic Services & Study Guides</h2>
-            <p style="margin-bottom: 25px; color: var(--text-color); font-size: 15px;">
-                Below are the academic translation services I offer and the course summaries I have prepared. Click the button on any item to instantly request it or inquire about collaboration.
-            </p>
-            <div class="services-grid">
-                
-                <!-- SERVICE 1 -->
-                <div class="service-card">
-                    <div>
-                        <span class="tag" style="background:var(--card-bg); margin-bottom:10px; display:inline-block;">✍️ Translation Service</span>
-                        <h3>Academic & Technical Translation</h3>
-                        <p style="font-size:14px; margin-top:5px;">Professional English-to-Turkish and Turkish-to-English translation services localized specifically for computer science, statistics, and economics terminology.</p>
-                    </div>
-                    <button class="view-btn" onclick="requestService('Academic & Technical Translation', 'translation')">Inquire About This Service →</button>
-                </div>
-
-                <!-- SERVICE 2 -->
-                <div class="service-card">
-                    <div>
-                        <span class="tag" style="background:var(--card-bg); margin-bottom:10px; display:inline-block;">📚 Study Notes</span>
-                        <h3>Finance & Accounting Study Pack</h3>
-                        <p style="font-size:14px; margin-top:5px;">Comprehensive university course summaries, 50-question practice sets, and detailed formula sheets for Finance, Statistics, and Accounting.</p>
-                    </div>
-                    <button class="view-btn" onclick="requestService('Finance & Accounting Study Pack', 'notes')">Request This Study Note →</button>
-                </div>
 
             </div>
         </section>
+
+     
 
         <!-- CERTIFICATES -->
         <section id="certificates">
             <h2>Certificates & Credentials</h2>
             <div class="certificates-grid">
+                
                 <div class="cert-card">
                     <div>
                         <h3>Advanced C Programming Core</h3>
                         <div class="cert-info">🏛️ BTK Akademi</div>
                     </div>
-                    <a href="https://github.com" target="_blank" class="action-link" style="font-size:12px; padding:6px 12px; margin-top:10px;">Verify Certificate →</a>
                 </div>
-            </div>
+
+                <div class="cert-card">
+                    <div>
+                        <h3>Introduction to Cybersecurity</h3>
+                        <div class="cert-info">🏛️ BTK Akademi</div>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div> 
+                        <h3>Basic Statistics for Data Science</h3>
+                        <div class="cert-info">🏛️ BTK Akademi</div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div> 
+                        <h3>Student SOC Program Foundations Training</h3>
+                        <div class="cert-info">🏛️ BTK Akademi</div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div> 
+                        <h3>Setting Career Goals</h3>
+                        <div class="cert-info">🏛️ BTK Akademi</div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div> 
+                        <h3>Career-Threatening Approaches</h3>
+                        <div class="cert-info">🏛️ BTK Akademi</div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div> 
+                        <h3>Interview Techniques</h3>
+                        <div class="cert-info">🏛️ BTK Akademi</div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div> 
+                        <h3>Terminal Usage</h3>
+                        <div class="cert-info">🏛️ BTK Akademi</div>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div> 
+                        <h3>Introduction to Databases</h3>
+                        <div class="cert-info">🏛️ BTK Akademi</div>
+                    </div>
+                </div>
+
+
+                </div>
         </section>
 
-        <!-- FAQ SECTION -->
-        <section id="faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Which languages do you support for translation?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        I specialize in academic and technical translations between English and Turkish, ensuring proper terminology for reports, summaries, and code localization.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Are the university study notes verified?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Yes! All study guides and comprehensive 50-question practice sets are thoroughly prepared and cross-referenced directly from official curriculum courses like Finance, Statistics, and History.
-                    </div>
-                </div>
-            </div>
-        </section>
+    
+        
 
         <!-- BLOG SECTION -->
         <section id="blog">
@@ -182,9 +185,8 @@
                 
                 <!-- BLOG POST 1 -->
                 <article>
-                    <div class="blog-meta">📅 July 1, 2026 | ⏱️ 3 min read</div>
-                    <h3>Exploring Code Structures in C Language</h3>
-                    <p>Understanding memory layout, pointers, and structures in C. In this short article, I discuss how structural coding principles help optimize micro-applications and backend performance...</p>
+                   
+                    <h3>Ther is no article yet</h3>
                 </article>
 
                 <!-- 💡 NEW BLOG ARTICLES CAN BE ADDED HERE AS AN <article> TO SHOW LIVE TO EVERYONE -->
@@ -230,6 +232,25 @@
     </footer>
 
     <script>
+        // ==================== 📱 MOBİL SİDEBAR MOTORU ====================
+        const navMenu = document.getElementById('navMenu');
+        const menuToggle = document.getElementById('menuToggle');
+        const closeSidebar = document.getElementById('closeSidebar');
+
+        // Menüyü Aç
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.add('sidebar-active');
+        });
+
+        // Menüyü Kapat
+        closeSidebar.addEventListener('click', () => {
+            navMenu.classList.remove('sidebar-active');
+        });
+
+        // Menü linklerine tıklanınca sidebar otomatik kapansın
+        window.closeMobileMenu = function() {
+            navMenu.classList.remove('sidebar-active');
+        };
         // Theme Engine
         const themeToggle = document.getElementById('themeToggle');
         if (localStorage.getItem('theme') === 'dark') {

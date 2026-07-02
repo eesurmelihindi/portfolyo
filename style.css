@@ -293,21 +293,87 @@
        border-radius: 8px; font-family: inherit; font-size: 14px;
        background-color: var(--bg-color); color: var(--text-color); margin-top: 6px;
    }
-   
-   /* ==========================================
-      11. RESPONSIVE & FOOTER
-      ========================================== */
+/* ==========================================
+   📱 RESPONSIVE & MOBILE LEFT SIDEBAR SYSTEM
+   ========================================== */
+   .menu-toggle-btn, .close-sidebar-btn { display: none; }
+
    @media (max-width: 768px) {
-       header { flex-direction: column; gap: 15px; padding: 15px; }
-       nav ul { gap: 12px; flex-wrap: wrap; justify-content: center; }
+       /* Header elemanlarını sola doğru hizala */
+       header {
+           justify-content: flex-start !important;
+           gap: 15px; /* Üç çizgi ile isim arasındaki boşluk */
+           padding: 15px 20px;
+       }
+   
+       /* Hamburger Menü Butonunu Göster */
+       .menu-toggle-btn {
+           display: block;
+           background: none;
+           border: none;
+           font-size: 26px;
+           color: var(--title-color);
+           cursor: pointer;
+           padding: 0;
+           margin: 0;
+       }
+   
+       /* Kapatma Çarpı Butonunu Göster */
+       .close-sidebar-btn {
+           display: block;
+           background: none;
+           border: none;
+           font-size: 32px;
+           color: var(--title-color);
+           position: absolute;
+           top: 20px;
+           left: 25px;
+           cursor: pointer;
+       }
+   
+       /* Navigasyon Barını Gizle ve Gizli Sol Sidebar'a Dönüştür */
+       header nav {
+           position: fixed;
+           top: 0;
+           left: -300px;
+           width: 280px;
+           height: 100vh;
+           background-color: var(--card-bg);
+           box-shadow: 5px 0 15px rgba(0,0,0,0.05);
+           padding: 80px 40px;
+           transition: left 0.4s ease;
+           z-index: 999;
+           border-right: 1px solid var(--border-color);
+       }
+   
+       /* Menü Aktif Olduğunda Sidebar Ekranın İçine Soldan Kayarak Gelsin */
+       header nav.sidebar-active {
+           left: 0;
+       }
+   
+       /* Menü Linklerini Alt Alta Sırala */
+       nav ul {
+           flex-direction: column;
+           align-items: flex-start;
+           gap: 25px;
+       }
+   
+       nav ul li a {
+           font-size: 18px;
+           font-weight: 600;
+       }
+   
+       /* Sabit Sosyal Barı Mobilde Alt Kısma Yatay Hizala */
        .sticky-social-bar {
            position: static;
            flex-direction: row;
            justify-content: center;
            transform: none;
            margin-top: 20px;
+           gap: 20px;
        }
    }
+
    footer { text-align: center; padding: 40px; color: #a3aba5; font-size: 13px; }
    .social-icon-btn i {
     font-size: 20px;
