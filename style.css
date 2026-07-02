@@ -160,42 +160,7 @@
    /* ==========================================
       6. FAQ BÖLÜMÜ (ACCORDION)
       ========================================== */
-   .faq-item {
-       background-color: var(--bg-color);
-       border: 1px solid var(--border-color);
-       border-radius: 8px;
-       margin-bottom: 12px;
-       overflow: hidden;
-   }
-   .faq-question {
-       padding: 15px 20px;
-       font-weight: 600;
-       color: var(--title-color);
-       cursor: pointer;
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       user-select: none;
-   }
-   .faq-answer {
-       padding: 0 20px;
-       max-height: 0;
-       overflow: hidden;
-       transition: max-height 0.3s ease, padding 0.3s ease;
-       font-size: 14px;
-       border-top: 0 solid var(--border-color);
-   }
-   .faq-item.active .faq-answer {
-       padding: 15px 20px;
-       max-height: 200px;
-       border-top: 1px solid var(--border-color);
-   }
-   .faq-icon {
-       transition: transform 0.3s ease;
-   }
-   .faq-item.active .faq-icon {
-       transform: rotate(45deg);
-   }
+
    
    /* ==========================================
       7. STICKY FLOATING SOCIAL BAR
@@ -296,83 +261,73 @@
 /* ==========================================
    📱 RESPONSIVE & MOBILE LEFT SIDEBAR SYSTEM
    ========================================== */
-   .menu-toggle-btn, .close-sidebar-btn { display: none; }
+.menu-toggle-btn, .close-sidebar-btn { display: none; }
 
-   @media (max-width: 768px) {
-       /* Header elemanlarını sola doğru hizala */
-       header {
-           justify-content: flex-start !important;
-           gap: 15px; /* Üç çizgi ile isim arasındaki boşluk */
-           padding: 15px 20px;
-       }
-   
-       /* Hamburger Menü Butonunu Göster */
-       .menu-toggle-btn {
-           display: block;
-           background: none;
-           border: none;
-           font-size: 26px;
-           color: var(--title-color);
-           cursor: pointer;
-           padding: 0;
-           margin: 0;
-       }
-   
-       /* Kapatma Çarpı Butonunu Göster */
-       .close-sidebar-btn {
-           display: block;
-           background: none;
-           border: none;
-           font-size: 32px;
-           color: var(--title-color);
-           position: absolute;
-           top: 20px;
-           left: 25px;
-           cursor: pointer;
-       }
-   
-       /* Navigasyon Barını Gizle ve Gizli Sol Sidebar'a Dönüştür */
-       header nav {
-           position: fixed;
-           top: 0;
-           left: -300px;
-           width: 280px;
-           height: 100vh;
-           background-color: var(--card-bg);
-           box-shadow: 5px 0 15px rgba(0,0,0,0.05);
-           padding: 80px 40px;
-           transition: left 0.4s ease;
-           z-index: 999;
-           border-right: 1px solid var(--border-color);
-       }
-   
-       /* Menü Aktif Olduğunda Sidebar Ekranın İçine Soldan Kayarak Gelsin */
-       header nav.sidebar-active {
-           left: 0;
-       }
-   
-       /* Menü Linklerini Alt Alta Sırala */
-       nav ul {
-           flex-direction: column;
-           align-items: flex-start;
-           gap: 25px;
-       }
-   
-       nav ul li a {
-           font-size: 18px;
-           font-weight: 600;
-       }
-   
-       /* Sabit Sosyal Barı Mobilde Alt Kısma Yatay Hizala */
-       .sticky-social-bar {
-           position: static;
-           flex-direction: row;
-           justify-content: center;
-           transform: none;
-           margin-top: 20px;
-           gap: 20px;
-       }
-   }
+@media (max-width: 768px) {
+    /* Header elemanlarını sola doğru hizala */
+    header {
+        justify-content: flex-start !important;
+        gap: 15px; /* Üç çizgi ile isim arasındaki boşluk */
+        padding: 15px 20px;
+    }
+
+
+
+    /* Kapatma Çarpı Butonunu Göster */
+    .close-sidebar-btn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 32px;
+        color: var(--title-color);
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    /* Navigasyon Barını Gizle ve Gizli Sol Sidebar'a Dönüştür */
+    header nav {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--card-bg);
+        box-shadow: 5px 0 15px rgba(0,0,0,0.05);
+        padding: 80px 40px;
+        transition: left 0.4s ease;
+        z-index: 999;
+        border-right: 1px solid var(--border-color);
+    }
+
+    /* Menü Aktif Olduğunda Sidebar Ekranın İçine Soldan Kayarak Gelsin */
+    header nav.sidebar-active {
+        left: 0;
+    }
+
+    /* Menü Linklerini Alt Alta Sırala */
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    /* Sabit Sosyal Barı Mobilde Alt Kısma Yatay Hizala */
+    .sticky-social-bar {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        transform: none;
+        margin-top: 20px;
+        gap: 20px;
+    }
+}
 
    footer { text-align: center; padding: 40px; color: #a3aba5; font-size: 13px; }
    .social-icon-btn i {
@@ -381,3 +336,298 @@
     align-items: center;
     justify-content: center;
 }
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    --background: #28096b;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    background: var(--background);
+    transition: .5s;
+  }
+  
+  input:checked + .slider {
+    background-color: #522ba7;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
+  }
+/* ==================== 🌗 UIVERSE KRATER TOGGLE ==================== */
+.nav-toggle-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+  }
+  
+  .toggleWrapper {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .toggleWrapper .input {
+    position: absolute;
+    left: -99em;
+  }
+  
+  .toggle {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 75px; /* Menüye sığması için hafif küçültüldü */
+    height: 40px;
+    background-color: #83d8ff;
+    border-radius: 84px;
+    transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  
+  .toggle__handler {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    top: 3px;
+    left: 3px;
+    width: 34px;
+    height: 34px;
+    background-color: #ffcf96;
+    border-radius: 50px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: rotate(-45deg);
+  }
+  
+  .toggle__handler .crater {
+    position: absolute;
+    background-color: #e8cda5;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+    border-radius: 100%;
+  }
+  
+  .toggle__handler .crater--1 { top: 14px; left: 8px; width: 4px; height: 4px; }
+  .toggle__handler .crater--2 { top: 22px; left: 18px; width: 5px; height: 5px; }
+  .toggle__handler .crater--3 { top: 8px; left: 20px; width: 6px; height: 6px; }
+  
+  .star {
+    position: absolute;
+    background-color: #fff;
+    transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    border-radius: 50%;
+  }
+  
+  .star--1 { top: 8px; left: 30px; z-index: 0; width: 25px; height: 3px; }
+  .star--2 { top: 15px; left: 24px; z-index: 1; width: 25px; height: 3px; }
+  .star--3 { top: 22px; left: 35px; z-index: 0; width: 25px; height: 3px; }
+  
+  .star--4, .star--5, .star--6 {
+    opacity: 0;
+    transition: all 300ms 0 cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  
+  .star--4 { top: 12px; left: 9px; z-index: 0; width: 2px; height: 2px; transform: translate3d(3px, 0, 0); }
+  .star--5 { top: 24px; left: 14px; z-index: 0; width: 3px; height: 3px; transform: translate3d(3px, 0, 0); }
+  .star--6 { top: 28px; left: 22px; z-index: 0; width: 2px; height: 2px; transform: translate3d(3px, 0, 0); }
+  
+  .input:checked + .toggle { background-color: #749dd6; }
+  
+  .input:checked + .toggle .toggle__handler {
+    background-color: #ffe5b5;
+    transform: translate3d(35px, 0, 0) rotate(0);
+  }
+  
+  .input:checked + .toggle .toggle__handler .crater { opacity: 1; }
+  .input:checked + .toggle .star--1 { width: 2px; height: 2px; }
+  .input:checked + .toggle .star--2 { width: 4px; height: 4px; transform: translate3d(-5px, 0, 0); }
+  .input:checked + .toggle .star--3 { width: 2px; height: 2px; transform: translate3d(-7px, 0, 0); }
+  
+  .input:checked + .toggle .star--4,
+  .input:checked + .toggle .star--5,
+  .input:checked + .toggle .star--6 {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .input:checked + .toggle .star--4 { transition: all 300ms 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+  .input:checked + .toggle .star--5 { transition: all 300ms 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+  .input:checked + .toggle .star--6 { transition: all 300ms 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+  /* ==================== ⏳ UIVERSE TAP HAND LOADING SCREEN ==================== */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0a0b0f; /* Sitenin arka plan rengiyle tam uyumlu */
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+  }
+  
+  .🤚 {
+    --skin-color: #d7cd79; /* Portfolyonun imza mavi/mor rengine uyarlandı */
+    --tap-speed: 0.6s;
+    --tap-stagger: 0.1s;
+    position: relative;
+    width: 80px;
+    height: 60px;
+  }
+  
+  .🤚:before {
+    content: '';
+    display: block;
+    width: 180%;
+    height: 75%;
+    position: absolute;
+    top: 70%;
+    right: 20%;
+    background-color: black;
+    border-radius: 40px 10px;
+    filter: blur(10px);
+    opacity: 0.3;
+  }
+  
+  .🌴 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--skin-color);
+    border-radius: 10px 40px;
+  }
+  
+  .👍 {
+    position: absolute;
+    width: 120%;
+    height: 38px;
+    background-color: var(--skin-color);
+    bottom: -18%;
+    right: 1%;
+    transform-origin: calc(100% - 20px) 20px;
+    transform: rotate(-20deg);
+    border-radius: 30px 20px 20px 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .👍:after {
+    width: 20%;
+    height: 60%;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    bottom: -8%;
+    left: 5px;
+    border-radius: 60% 10% 10% 30%;
+    border-right: 2px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .👉 {
+    position: absolute;
+    width: 80%;
+    height: 35px;
+    background-color: var(--skin-color);
+    bottom: 32%;
+    right: 64%;
+    transform-origin: 100% 20px;
+    animation-duration: calc(var(--tap-speed) * 2);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    transform: rotate(10deg);
+  }
+  
+  .👉:before {
+    content: '';
+    position: absolute;
+    width: 140%;
+    height: 30px;
+    background-color: var(--skin-color);
+    bottom: 8%;
+    right: 65%;
+    transform-origin: calc(100% - 20px) 20px;
+    transform: rotate(-60deg);
+    border-radius: 20px;
+  }
+  
+  .👉:nth-child(1) {
+    animation-delay: 0;
+    filter: brightness(70%);
+    animation-name: tap-upper-1;
+  }
+  
+  .👉:nth-child(2) {
+    animation-delay: var(--tap-stagger);
+    filter: brightness(80%);
+    animation-name: tap-upper-2;
+  }
+  
+  .👉:nth-child(3) {
+    animation-delay: calc(var(--tap-stagger) * 2);
+    filter: brightness(90%);
+    animation-name: tap-upper-3;
+  }
+  
+  .👉:nth-child(4) {
+    animation-delay: calc(var(--tap-stagger) * 3);
+    filter: brightness(100%);
+    animation-name: tap-upper-4;
+  }
+  
+  @keyframes tap-upper-1 {
+    0%, 50%, 100% { transform: rotate(10deg) scale(0.4); }
+    40% { transform: rotate(50deg) scale(0.4); }
+  }
+  
+  @keyframes tap-upper-2 {
+    0%, 50%, 100% { transform: rotate(10deg) scale(0.6); }
+    40% { transform: rotate(50deg) scale(0.6); }
+  }
+  
+  @keyframes tap-upper-3 {
+    0%, 50%, 100% { transform: rotate(10deg) scale(0.8); }
+    40% { transform: rotate(50deg) scale(0.8); }
+  }
+  
+  @keyframes tap-upper-4 {
+    0%, 50%, 100% { transform: rotate(10deg) scale(1); }
+    40% { transform: rotate(50deg) scale(1); }
+  }
