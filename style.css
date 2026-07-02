@@ -740,32 +740,23 @@
     }
   
   /* ==================== 📱 MOBİL SİDEBAR İÇİN TOGGLE GÖRÜNÜRLÜK AYARI ==================== */
+/* ==================== 📱 MOBİL HAMBURGER TEK BUTON AYARI ==================== */
 @media (max-width: 768px) {
-    /* Sidebar açıldığında listenin elemanlarını dikeyde güzelce hizalar */
-    #navMenu ul {
+    header {
       display: flex !important;
-      flex-direction: column !important;
       align-items: center !important;
-      gap: 20px !important;
-      padding: 20px 0 !important;
+      justify-content: space-between !important;
+      min-height: 60px !important;
+      padding: 10px 20px !important;
     }
   
-    /* Butonun durduğu liste elemanını zorla görünür yapar */
-    .nav-toggle-item.mobile-visible-toggle {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      width: 100% !important;
-      justify-content: center !important;
-      margin-top: 15px !important; /* Diğer linklerden biraz ayrı dursun diye */
-    }
-  
-    /* Uiverse kutusunun mobildeki konumunu sabitler */
-    .nav-toggle-item.mobile-visible-toggle .toggleWrapper {
-      position: relative !important;
-      left: auto !important;
-      top: auto !important;
-      transform: none !important;
-      display: inline-block !important;
+    /* Sadece en tepedeki beyaz hamburger butonunu hizalar */
+    .menu-toggle-btn {
+      display: block !important;
+      font-size: 28px !important;
+      color: #fff !important; /* Üst barda beyaz renkte net parlasın */
+      background: none !important;
+      border: none !important;
+      cursor: pointer !important;
     }
   }
