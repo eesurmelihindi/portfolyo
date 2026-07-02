@@ -695,6 +695,7 @@
     }
   }
   /* ==================== 📱 HAMBURGER MENÜ BUTONU ZORLA GÖSTERME ==================== */
+/* ==================== 📱 MOBİL HAMBURGER TEKE DÜŞÜRME VE HİZALAMA ==================== */
 @media (max-width: 768px) {
     header {
       display: flex !important;
@@ -705,24 +706,66 @@
       position: relative !important;
     }
   
-    .menu-toggle-btn {
-      display: block !important;          /* Mobilde zorla görünür yap */
-      visibility: visible !important;    /* Gizliliği kaldır */
-      opacity: 1 !important;             /* Şeffaflığı sıfırla */
-      font-size: 28px !important;        /* Butonu belirginleştir */
-      color: #5b6bff !important;         /* Senin o tatlı imza mavi/mor renginle parlasın */
+    /* Sadece bizim HTML'e eklediğimiz esas butona dokunuyoruz, kopyaları eziyoruz */
+    header > .menu-toggle-btn {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      font-size: 28px !important;
+      color: #5b6bff !important; /* Şık imza mavi rengimiz */
       background: none !important;
       border: none !important;
       cursor: pointer !important;
-      position: absolute !important;     /* Sol köşeye sabitleyelim */
+      position: absolute !important;
       left: 20px !important;
       top: 50% !important;
       transform: translateY(-50%) !important;
-      z-index: 9999 !important;          /* En üst katmana al */
+      z-index: 9999 !important;
     }
+  
+    /* Eğer sistemde başka bir görünmez kopya buton varsa onu tamamen gizle */
+    header .menu-toggle-btn:not(header > .menu-toggle-btn) {
+      display: none !important;
+    }
+  
+    header h1 {
+      margin-left: 50px !important;
+      font-size: 20px !important;
+    }
+  }
   
     header h1 {
       margin-left: 50px !important;      /* Başlık butonun üstüne binmesin diye kaydır */
       font-size: 20px !important;
+    }
+  
+  /* ==================== 📱 MOBİL SİDEBAR İÇİN TOGGLE GÖRÜNÜRLÜK AYARI ==================== */
+@media (max-width: 768px) {
+    /* Sidebar açıldığında listenin elemanlarını dikeyde güzelce hizalar */
+    #navMenu ul {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 20px !important;
+      padding: 20px 0 !important;
+    }
+  
+    /* Butonun durduğu liste elemanını zorla görünür yapar */
+    .nav-toggle-item.mobile-visible-toggle {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      width: 100% !important;
+      justify-content: center !important;
+      margin-top: 15px !important; /* Diğer linklerden biraz ayrı dursun diye */
+    }
+  
+    /* Uiverse kutusunun mobildeki konumunu sabitler */
+    .nav-toggle-item.mobile-visible-toggle .toggleWrapper {
+      position: relative !important;
+      left: auto !important;
+      top: auto !important;
+      transform: none !important;
+      display: inline-block !important;
     }
   }
